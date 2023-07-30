@@ -283,10 +283,12 @@
                                         <li><a class="active" href="/home">Trang chủ</a> </li>
                                         <li><a href="#">Áo nam</a>
                                             <ul class="sub_menu">
-                                                <li><a href="/single_product/{{1}}">Áo phông</a></li>
+                                                <li><a href="/single_product/1">Áo phông</a>
+                                                </li>
                                                 <li><a href="/single_product/2">Áo khoác</a></li>
                                             </ul>
                                         </li>
+
                                         <li><a href="#">Quần nam</a>
                                             <ul class="sub_menu">
                                                 <li><a href="/single_product/3">Quần jean</a></li>
