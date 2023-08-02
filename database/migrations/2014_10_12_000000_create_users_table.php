@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('full_name');
             $table->string('acc_name');
-            $table->string('pass');
+            $table->string('password');
             $table->string('address');
             $table->string('email');
             $table->string('phone');

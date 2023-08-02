@@ -26,11 +26,14 @@ Route::get('/product_details/{id}', [ProductController::class, 'product_details'
 Route::get('/single_product/{id}', [ProductController::class, 'single_product']);
 
 //  ================================= admin ==================================
-Route::resource('/product', ProductController::class);
-Route::resource('/category', CategoryController::class);
-Route::resource('/user', UserController::class);
+Route::middleware('auth')->group(function(){
+    Route::resource('/product', ProductController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/user', UserController::class);    
+});
 
 
+// ================================ breeze ===================================
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

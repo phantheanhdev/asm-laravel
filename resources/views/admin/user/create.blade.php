@@ -29,8 +29,8 @@
             <div id="er_acc_name" class="form-text" style="color: red"></div>
         </div>
         <div class="mb-3">
-            <label class="form-label">Pass</label>
-            <input type="text" class="form-control" name="pass" id="pass">
+            <label class="form-label">Password</label>
+            <input type="text" class="form-control" name="password" id="pass">
             <div id="er_pass" class="form-text" style="color: red"></div>
         </div>
         <div class="mb-3">
@@ -58,12 +58,13 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    
 
     <script>
         const form = document.getElementById('form');
         const fullNameInput = document.getElementById('full_name');
         const accNameInput = document.getElementById('acc_name');
-        const passInput = document.getElementById('pass');
+        const passInput = document.getElementById('password');
         const addressInput = document.getElementById('address');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');

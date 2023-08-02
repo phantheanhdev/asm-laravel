@@ -44,7 +44,6 @@
                     </th>
                     <th class="all">Full name</th>
                     <th>Acc name</th>
-                    <th>Pass</th>
                     <th>Address</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -66,9 +65,6 @@
                         </td>
                         <td>
                             {{ $user->acc_name }}
-                        </td>
-                        <td>
-                            {{ $user->pass }}
                         </td>
                         <td>
                             {{ $user->address }}

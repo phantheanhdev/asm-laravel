@@ -134,10 +134,12 @@ class ProductController extends Controller
 
     public function single_product($id)
     {
-        $product = Product::findOrFail($id);
+        $products = Product::where('category_id', $id)->get();
+        $categories = Category::all();
 
-        dd($product);
-
-        return view('user.product.single_product', compact('product'));
+        return view('user.product.single_product', [
+            'products' => $products,
+            'categories' => $categories
+        ]);
     }
 }

@@ -426,9 +426,25 @@
 
 
                     <li class="d-none d-md-inline-block">
-                        <a class="nav-link" href="#" data-toggle="fullscreen">
-                            <i class="ri-fullscreen-line font-22"></i>
+                    </li>
+
+                    <li class="d-none d-md-inline-block">
+                        <a class="nav-link" href="/home" data-toggle="fullscreen">
+                            Trang chủ
                         </a>
+                    </li>
+
+                    <li class="d-none d-md-inline-block">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Đăng xuất') }}
+                            </x-dropdown-link>
+                        </form>
+
                     </li>
 
                     <li class="dropdown">
@@ -440,8 +456,10 @@
 
                             </span>
                             <span class="d-lg-flex flex-column gap-1 d-none">
-                                <h5 class="my-0">Dominic Keller</h5>
-                                <h6 class="my-0 fw-normal">Founder</h6>
+                                @if (isset(Auth::user()->full_name))
+                                    <h5 class="my-0">{{ Auth::user()->full_name }}</h5>
+                                @endif
+                                <h6 class="my-0 fw-normal">Admin</h6>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -498,7 +516,7 @@
                     <img src="{{ asset('assets2/images/logo-sm.png') }}" alt="small logo">
                 </span>
             </a>
-        
+
             <!-- Brand Logo Dark -->
             <a href="{{ route('product.index') }}" class="logo logo-dark">
                 <span class="logo-lg">
@@ -508,18 +526,18 @@
                     <img src="{{ asset('assets2/images/logo-dark-sm.png') }}" alt="small logo">
                 </span>
             </a>
-        
+
             <!-- Sidebar Hover Menu Toggle Button -->
             <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right"
                 title="Show Full Sidebar">
                 <i class="ri-checkbox-blank-circle-line align-middle"></i>
             </div>
-        
+
             <!-- Full Sidebar Menu Close Button -->
             <div class="button-close-fullsidebar">
                 <i class="ri-close-fill align-middle"></i>
             </div>
-        
+
             <!-- Sidebar -left -->
             <div class="h-100" id="leftside-menu-container" data-simplebar>
                 <!-- Leftbar User -->
@@ -530,12 +548,12 @@
                         <span class="leftbar-user-name mt-2">Dominic Keller</span>
                     </a>
                 </div>
-        
+
                 <!--- Sidemenu -->
                 <ul class="side-nav">
-        
+
                     <li class="side-nav-title">Admin</li>
-        
+
                     <li class="side-nav-item">
                         <a href="{{ route('product.index') }}" class="side-nav-link">
                             <i class="uil-calender"></i>
@@ -556,11 +574,11 @@
                     </li>
                 </ul>
                 <!--- End Sidemenu -->
-        
+
                 <div class="clearfix"></div>
             </div>
         </div>
-                <!-- ========== Left Sidebar End ========== -->
+        <!-- ========== Left Sidebar End ========== -->
 
         <!-- ============================================================== -->
         <!-- Start Page Content here -->

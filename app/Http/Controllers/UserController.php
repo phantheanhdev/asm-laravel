@@ -37,22 +37,26 @@ class UserController extends Controller
     {
         $full_name = $request->input('full_name');
         $acc_name = $request->input('acc_name');
-        $pass = $request->input('pass');
+        $password = $request->input('password');
         $address = $request->input('address');
         $email = $request->input('email');
         $phone = $request->input('phone');
         $role = $request->input('role');
 
+        // Mã hóa mật khẩu sử dụng bcrypt()
+        $hashedPassword = bcrypt($password);
+
         $data = [
             'full_name' => $full_name,
             'acc_name' => $acc_name,
-            'pass' => $pass,
+            'password' => $hashedPassword, // Lưu mật khẩu đã mã hóa vào cơ sở dữ liệu
             'view' => 0,
             'address' => $address,
             'email' => $email,
             'phone' => $phone,
             'role' => $role
         ];
+
         User::create($data);
         return redirect()->route('user.index')->with('success', 'Thêm thành công');
     }
@@ -80,7 +84,7 @@ class UserController extends Controller
     {
         $full_name = $request->input('full_name');
         $acc_name = $request->input('acc_name');
-        $pass = $request->input('pass');
+        $password = $user->password;
         $address = $request->input('address');
         $email = $request->input('email');
         $phone = $request->input('phone');
@@ -89,7 +93,7 @@ class UserController extends Controller
         $user->fill([
             'full_name' => $full_name,
             'acc_name' => $acc_name,
-            'pass' => $pass,
+            'password' => $password,
             'view' => 0,
             'address' => $address,
             'email' => $email,
@@ -109,6 +113,4 @@ class UserController extends Controller
 
         return redirect()->route('user.index')->with('success', 'Xóa thành công');
     }
-
-
 }

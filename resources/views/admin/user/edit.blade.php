@@ -30,11 +30,6 @@
             <div id="er_acc_name" class="form-text" style="color: red"></div>
         </div>
         <div class="mb-3">
-            <label class="form-label">Pass</label>
-            <input type="text" class="form-control" name="pass" id="pass" value="{{ $user->pass }}">
-            <div id="er_pass" class="form-text" style="color: red"></div>
-        </div>
-        <div class="mb-3">
             <label class="form-label">Address</label>
             <input type="text" class="form-control" name="address" id="address" value="{{ $user->address }}">
             <div id="er_address" class="form-text" style="color: red"></div>
@@ -64,7 +59,7 @@
         const form = document.getElementById('form');
         const fullNameInput = document.getElementById('full_name');
         const accNameInput = document.getElementById('acc_name');
-        const passInput = document.getElementById('pass');
+        const passInput = document.getElementById('password');
         const addressInput = document.getElementById('address');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
@@ -96,7 +91,7 @@
                     'Viết liền không dấu, 4-50 kí tự';
             }
 
-            // Validate Pass
+            // Validate password
             const passRegex = /^[a-zA-Z0-9]{5,100}$/;
             if (!passInput.value) {
                 document.getElementById('er_pass').textContent = 'Không được để trống';

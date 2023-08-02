@@ -224,7 +224,12 @@
                                 </ul>
                             </div>
                             <div class="free_shipping_text">
-                                <p class="text-white">Kính chào: khách hàng <a href="#"></a></p>
+                                @if (isset(Auth::user()->full_name))
+                                    <p class="text-white">Kính chào: {{ Auth::user()->full_name }} <a
+                                            href="#"></a></p>
+                                @else
+                                    <p class="text-white">Kính chào: khách hàng<a href="#"></a></p>
+                                @endif
                             </div>
                             <div class="header_top_sidebar d-flex align-items-center">
                                 <div class="header_social d-flex">
@@ -305,9 +310,24 @@
                                                 class="icon-magnifier icons"></i></a></li>
                                     <li class="account_link"><a href="#"><i class="icon-user icons"></i></a>
                                         <ul class="dropdown_account_link">
-                                            <li><a href="#">My Account</a></li>
-                                            <li><a href="/register">Đăng ký</a></li>
-                                            <li><a href="/login">Đăng nhập</a></li>
+
+                                            @if (isset(Auth::user()->full_name))
+                                                @if (isset(Auth::user()->role) && Auth::user()->role == 0)
+                                                    <li><a href="/product">Vào admin</a></li>
+                                                @endif
+                                                <li><a href="/profile">Tài khoản</a></li>
+
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <li><a href="route('logout')"
+                                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();">Đăng
+                                                            xuất</a></li>
+                                                </form>
+                                            @else
+                                                <li><a href="/register">Đăng ký</a></li>
+                                                <li><a href="/login">Đăng nhập</a></li>
+                                            @endif
                                         </ul>
                                     </li>
                                     <li><a href="#"><i class="icon-heart icons"></i></a> <span
