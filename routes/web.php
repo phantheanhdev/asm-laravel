@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -24,6 +25,9 @@ Route::get('/home', [HomeController::class, 'index']);
 // product
 Route::get('/product_details/{id}', [ProductController::class, 'product_details']);
 Route::get('/single_product/{id}', [ProductController::class, 'single_product']);
+
+// cart
+Route::get('/cart', [CartController::class, 'cart']);
 
 //  ================================= admin ==================================
 Route::middleware('auth')->group(function(){
