@@ -184,9 +184,9 @@
                                                 <span class="text-black">{{ $new_product->price }}</span>
                                             </div>
                                             <div class="add_to_cart">
-                                                <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                                                <a class="btn btn-primary" href="/product_details/{{ $new_product->id }}" data-tippy="See details"
                                                     data-tippy-inertia="true" data-tippy-delay="50"
-                                                    data-tippy-arrow="true" data-tippy-placement="top">Thêm vào giỏ hàng</a>
+                                                    data-tippy-arrow="true" data-tippy-placement="top">Xem chi tiết</a>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -275,9 +275,9 @@
                                                 <span class="text-black">{{ $hot_product->price }}</span>
                                             </div>
                                             <div class="add_to_cart">
-                                                <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                                                <a class="btn btn-primary" href="/product_details/{{ $hot_product->id }}" data-tippy="See details"
                                                     data-tippy-inertia="true" data-tippy-delay="50"
-                                                    data-tippy-arrow="true" data-tippy-placement="top">Thêm vào giỏ hàng</a>
+                                                    data-tippy-arrow="true" data-tippy-placement="top">Xem chi tiết</a>
                                             </div>
                                         </figcaption>
                                     </figure>

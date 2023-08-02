@@ -206,9 +206,9 @@
                                             {{-- <span class="old_price">$46.00</span> --}}
                                         </div>
                                         <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                                            <a class="btn btn-primary" href="/product_details/{{ $product->id }}" data-tippy="See details"
                                                 data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Thêm vào giỏ hàng</a>
+                                                data-tippy-placement="top">Xem chi tiết</a>
                                         </div>
                                     </div>
                                     <div class="product_list_content">
@@ -222,9 +222,9 @@
                                             <p>{{ $product->desc }}</p>
                                         </div>
                                         <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                                            <a class="btn btn-primary" href="/product_details/{{ $product->id }}" data-tippy="See details"
                                                 data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Thêm vào giỏ hàng</a>
+                                                data-tippy-placement="top">Xem chi tiết</a>
 
                                         </div>
                                     </div>

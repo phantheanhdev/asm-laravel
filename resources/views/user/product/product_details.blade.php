@@ -88,8 +88,17 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                        <form action="#">
-                            <h1>{{ $product->name }} </h1>
+                        <form action="/add_cart" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+                            <input type="hidden" value="{{ $product->id }}" name="id">
+                            <input type="hidden" value="{{ $product->name }}" name="name">
+                            <input type="hidden" value="{{ $product->price }}" name="price">
+                            <input type="hidden" value="{{ $product->desc }}" name="desc">
+                            <input type="hidden" value="{{ $product->img }}" name="img">
+
+
+                            <h1 name="name">{{ $product->name }} </h1>
                             <div class="product_ratting_review d-flex align-items-center">
                                 <div class=" product_ratting">
                                     <ul class="d-flex">
@@ -117,17 +126,17 @@
                                     <h3>Màu sắc</h3>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="color" autocomplete="off"
-                                            name="color">
+                                            name="color" value="Đen">
                                         <label class="btn btn-outline-secondary" for="color">Đen</label><br>
                                     </div>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="color2" autocomplete="off"
-                                            name="color">
+                                            name="color" value="Trắng">
                                         <label class="btn btn-outline-secondary" for="color2">Trắng</label><br>
                                     </div>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="color3" autocomplete="off"
-                                            name="color">
+                                            name="color" value="Xanh">
                                         <label class="btn btn-outline-secondary" for="color3">Xanh</label><br>
                                     </div>
                                 </div>
@@ -135,29 +144,29 @@
                                     <h3>Size</h3>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="size" autocomplete="off"
-                                            name="size">
+                                            name="size" value="S">
                                         <label class="btn btn-outline-secondary" for="size">S</label><br>
                                     </div>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="size2" autocomplete="off"
-                                            name="size">
+                                            name="size" value="M">
                                         <label class="btn btn-outline-secondary" for="size2">M</label><br>
                                     </div>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="size3" autocomplete="off"
-                                            name="size">
+                                            name="size" value="L">
                                         <label class="btn btn-outline-secondary" for="size3">L</label><br>
                                     </div>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="size4" autocomplete="off"
-                                            name="size">
+                                            name="size" value="XL">
                                         <label class="btn btn-outline-secondary" for="size4">XL</label><br>
                                     </div>
                                 </div>
 
                                 <div class="variant_quantity_btn d-flex">
                                     <div class="pro-qty border">
-                                        <input min="1" max="100" type="tex" value="1">
+                                        <input min="1" max="100" type="tex" value="1" name="quantity">
                                     </div>
                                     <button class="button btn btn-primary" type="submit"><i class="ion-android-add"></i>
                                         Thêm vào giỏ hàng</button>
@@ -356,9 +365,9 @@
                                             <span class="current_price">{{ $similar->price }} VND</span>
                                         </div>
                                         <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
-                                                data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Thêm vào giỏ</a>
+                                            <a class="btn btn-primary" href="/product_details/{{ $similar->id }}"
+                                                data-tippy="Add To Cart" data-tippy-inertia="true" data-tippy-delay="50"
+                                                data-tippy-arrow="true" data-tippy-placement="top">Xem chi tiết</a>
                                         </div>
                                     </figcaption>
                                 </figure>

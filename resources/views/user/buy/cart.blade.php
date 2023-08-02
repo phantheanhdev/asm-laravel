@@ -33,82 +33,50 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="border-top">
-                                            <td>
-                                                <div class="cart_product_thumb">
-                                                    <img src="assets/img/product/product4.jpg" alt="">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_text">
-                                                    <h4>Example With Title Product</h4>
-                                                    <ul>
-                                                        <li><i class="ion-ios-arrow-right"></i> Color : <span>White</span>
-                                                        </li>
-                                                        <li><i class="ion-ios-arrow-right"></i> Size : <span>XL</span></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>$45.05</span>
-                                                </div>
-                                            </td>
-                                            <td class="product_quantity">
-                                                <div class="cart_product_quantity">
-                                                    <input min="1" max="100" value="1" type="number">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>$45.05</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_remove text-right">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </td>
-
-                                        </tr>
-                                        <tr class="border-top">
-                                            <td>
-                                                <div class="cart_product_thumb">
-                                                    <img src="assets/img/product/product6.jpg" alt="">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_text">
-                                                    <h4>Example With Title Product</h4>
-                                                    <ul>
-                                                        <li><i class="ion-ios-arrow-right"></i> Color : <span>White</span>
-                                                        </li>
-                                                        <li><i class="ion-ios-arrow-right"></i> Size : <span>XL</span></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>$45.05</span>
-                                                </div>
-                                            </td>
-                                            <td class="product_quantity">
-                                                <div class="cart_product_quantity">
-                                                    <input min="1" max="100" value="1" type="number">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>$45.05</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_remove text-right">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </td>
-
-                                        </tr>
+                                        @if (Session::has('list_cart') && !empty(Session::get('list_cart')))
+                                            @foreach (Session::get('list_cart') as $list_cart)
+                                                <tr class="border-top">
+                                                    <td>
+                                                        <div class="cart_product_thumb">
+                                                            <img src="{{ asset('storage/images/' . $list_cart['img']) }}"
+                                                                alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="cart_product_text">
+                                                            <h4>{{ $list_cart['name'] }}</h4>
+                                                            <ul>
+                                                                <li><i class="ion-ios-arrow-right"></i> Color :
+                                                                    <span>{{ $list_cart['color'] }}</span></li>
+                                                                <li><i class="ion-ios-arrow-right"></i> Size :
+                                                                    <span>{{ $list_cart['size'] }}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="cart_product_price">
+                                                            <span>{{ $list_cart['price'] }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product_quantity">
+                                                        <div class="cart_product_quantity">
+                                                            <input min="1" max="100" value="1"
+                                                                type="number">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="cart_product_price">
+                                                            <span>{{ $list_cart['size'] }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="cart_product_remove text-right">
+                                                            <a href="#"><i class="ion-android-close"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -118,7 +86,7 @@
                                     <button class="btn btn-primary border" type="submit">Cập nhật giỏ hàng</button>
                                 </div>
                                 <div class="shopping_continue_btn">
-                                    
+
                                     <button class="btn btn-primary" type="submit">Tiếp tục mua sắm</button>
                                 </div>
                             </div>

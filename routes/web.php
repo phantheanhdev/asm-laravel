@@ -28,6 +28,8 @@ Route::get('/single_product/{id}', [ProductController::class, 'single_product'])
 
 // cart
 Route::get('/cart', [CartController::class, 'cart']);
+Route::post('/add_cart', [CartController::class, 'add_cart']);
+
 
 //  ================================= admin ==================================
 Route::middleware('auth')->group(function(){
