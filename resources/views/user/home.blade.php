@@ -181,7 +181,7 @@
                                             <h4 class="product_name"><a
                                                     href="/product_details/{{ $new_product->id }}">{{ $new_product->name }}</a></h4>
                                             <div class="price_box">
-                                                <span class="text-black">{{ $new_product->price }}</span>
+                                                <span class="text-black">{{ number_format($new_product->price) }} VND</span>
                                             </div>
                                             <div class="add_to_cart">
                                                 <a class="btn btn-primary" href="/product_details/{{ $new_product->id }}" data-tippy="See details"
@@ -272,7 +272,7 @@
                                             <h4 class="product_name"><a
                                                     href="/product_details/{{ $hot_product->id }}">{{ $hot_product->name }}</a></h4>
                                             <div class="price_box">
-                                                <span class="text-black">{{ $hot_product->price }}</span>
+                                                <span class="text-black">{{ number_format($hot_product->price) }} VND</span>
                                             </div>
                                             <div class="add_to_cart">
                                                 <a class="btn btn-primary" href="/product_details/{{ $hot_product->id }}" data-tippy="See details"

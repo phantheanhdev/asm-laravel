@@ -202,7 +202,7 @@
                                                 href="/product_details/{{ $product->id }}">{{ $product->name }}</a>
                                         </h4>
                                         <div class="price_box">
-                                            <span class="current_price">{{ $product->price }}</span>
+                                            <span class="current_price">{{ number_format($product->price) }} VND</span>
                                             {{-- <span class="old_price">$46.00</span> --}}
                                         </div>
                                         <div class="add_to_cart">

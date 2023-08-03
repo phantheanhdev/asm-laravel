@@ -55,7 +55,13 @@ class CartController extends Controller
         session()->put('list_cart', $cart);
 
         // dd(session('list_cart'));
-        
+
+        return redirect('cart');
+    }
+
+    public function delete_all_cart()
+    {
+        Session::flush();
         return redirect('cart');
     }
 }

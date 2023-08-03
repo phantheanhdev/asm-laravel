@@ -82,7 +82,7 @@
                             </div>
                             <div class="cart_page_button border-top d-flex justify-content-between">
                                 <div class="shopping_cart_btn">
-                                    <a href="#" class="btn btn-primary border">Xóa tất cả sản phẩm</a>
+                                    <a href="/delete_all_cart" class="btn btn-primary border">Xóa tất cả sản phẩm</a>
                                     <button class="btn btn-primary border" type="submit">Cập nhật giỏ hàng</button>
                                 </div>
                                 <div class="shopping_continue_btn">

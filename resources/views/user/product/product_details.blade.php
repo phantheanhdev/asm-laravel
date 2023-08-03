@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             <div class="price_box">
-                                <span class="current_price">{{ $product->price }} VND</span>
+                                <span class="current_price">{{ number_format($product->price) }} VND</span>
                             </div>
                             <div class="product_desc">
 
@@ -126,7 +126,7 @@
                                     <h3>Màu sắc</h3>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="color" autocomplete="off"
-                                            name="color" value="Đen">
+                                            name="color" value="Đen" required>
                                         <label class="btn btn-outline-secondary" for="color">Đen</label><br>
                                     </div>
                                     <div class="px-2">
@@ -144,7 +144,7 @@
                                     <h3>Size</h3>
                                     <div class="px-2">
                                         <input type="radio" class="btn-check" id="size" autocomplete="off"
-                                            name="size" value="S">
+                                            name="size" value="S" required>
                                         <label class="btn btn-outline-secondary" for="size">S</label><br>
                                     </div>
                                     <div class="px-2">

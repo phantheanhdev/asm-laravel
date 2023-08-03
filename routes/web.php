@@ -29,6 +29,7 @@ Route::get('/single_product/{id}', [ProductController::class, 'single_product'])
 // cart
 Route::get('/cart', [CartController::class, 'cart']);
 Route::post('/add_cart', [CartController::class, 'add_cart']);
+Route::get('/delete_all_cart', [CartController::class, 'delete_all_cart']);
 
 
 //  ================================= admin ==================================
