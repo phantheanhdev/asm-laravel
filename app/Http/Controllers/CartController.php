@@ -14,24 +14,48 @@ class CartController extends Controller
 
     public function add_cart(Request $request)
     {
-        // Kiểm tra xem session 'list_cart' đã tồn tại chưa, nếu chưa thì khởi tạo là một mảng trống
         if (!$request->session()->has('list_cart')) {
             $request->session()->put('list_cart', []);
         }
 
-        // Lấy danh sách sản phẩm từ session 'list_cart'
-        $listCart = $request->session()->get('list_cart');
+        $productId = $request->input('id');
+        $name = $request->input('name');
+        $desc = $request->input('desc');
+        $img = $request->input('img');
+        $price = $request->input('price');
+        $color = $request->input('color');
+        $size = $request->input('size');
+        $quantity = $request->input('quantity');
 
-        // Lấy thông tin sản phẩm từ request
-        $product = $request->all();
+        $productData = [
+            'id' => $productId,
+            'name' => $name,
+            'quantity' => $quantity,
+            'img' => $img,
+            'price' => $price,
+            'color' => $color,
+            'size' => $size,
+            'desc' => $desc,
+        ];
 
-        // Thêm sản phẩm vào danh sách
-        $listCart[] = $product;
+        // Thêm sản phẩm vào session
+        $cart = session()->get('list_cart', []);
 
-        // Lưu danh sách sản phẩm đã thêm vào session
-        $request->session()->put('list_cart', $listCart);
+        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+        $productKey = $productId;
+        if (array_key_exists($productKey, $cart)) {
+            // Nếu sản phẩm đã tồn tại, chỉ cập nhật số lượng
+            $cart[$productKey]['quantity'] += $quantity;
+        } else {
+            // Nếu sản phẩm chưa tồn tại, thêm sản phẩm vào giỏ hàng
+            $cart[$productKey] = $productData;
+        }
 
-        // Debug để xem danh sách sản phẩm trong session
-        dd($request->session()->get('list_cart'));
+        // Lưu giỏ hàng vào session
+        session()->put('list_cart', $cart);
+
+        // dd(session('list_cart'));
+        
+        return redirect('cart');
     }
 }

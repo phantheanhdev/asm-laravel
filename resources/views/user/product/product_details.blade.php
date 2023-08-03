@@ -166,7 +166,8 @@
 
                                 <div class="variant_quantity_btn d-flex">
                                     <div class="pro-qty border">
-                                        <input min="1" max="100" type="tex" value="1" name="quantity">
+                                        <input min="1" max="100" type="number" value="1"
+                                            name="quantity">
                                     </div>
                                     <button class="button btn btn-primary" type="submit"><i class="ion-android-add"></i>
                                         Thêm vào giỏ hàng</button>

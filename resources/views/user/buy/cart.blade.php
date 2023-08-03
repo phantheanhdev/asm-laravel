@@ -60,13 +60,13 @@
                                                     </td>
                                                     <td class="product_quantity">
                                                         <div class="cart_product_quantity">
-                                                            <input min="1" max="100" value="1"
+                                                            <input min="1" max="100" value="{{ $list_cart['quantity'] }}"
                                                                 type="number">
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="cart_product_price">
-                                                            <span>{{ $list_cart['size'] }}</span>
+                                                            <span>{{ $list_cart['quantity'] * $list_cart['price'] }}</span>
                                                         </div>
                                                     </td>
                                                     <td>
