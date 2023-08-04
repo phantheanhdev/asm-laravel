@@ -94,12 +94,12 @@ class CartController extends Controller
 
         if ($bill) {
             Session::forget('list_cart');
-            return redirect('/bill');
+            return redirect('/payment_success');
         }
     }
 
-    public function bill()
+    public function payment_success()
     {
-        return view('user.buy.bill');
+        return view('user.buy.payment_success');
     }
 }

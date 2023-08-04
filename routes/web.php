@@ -34,7 +34,7 @@ Route::get('/delete_one_cart/{id}', [CartController::class, 'delete_one_cart']);
 
 Route::get('/check_out', [CartController::class, 'check_out']);
 Route::post('/save_bill', [CartController::class, 'save_bill']);
-Route::get('/bill', [CartController::class, 'bill']);
+Route::get('/payment_success', [CartController::class, 'payment_success']);
 
 
 //  ================================= admin ==================================
