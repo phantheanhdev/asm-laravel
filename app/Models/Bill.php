@@ -9,10 +9,14 @@ class Bill extends Model
 {
     use HasFactory;
 
-        protected $fillable = [
-        'total_price',
-        'product_id',
-        'user_id'
+    protected $fillable = [
+        'user_id',
+        'full_name',
+        'address',
+        'email',
+        'phone',
+        'list_cart',
+        'total',
+        'pttt',
     ];
-
 }

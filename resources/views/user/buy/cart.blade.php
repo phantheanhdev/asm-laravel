@@ -47,31 +47,35 @@
                                                             <h4>{{ $list_cart['name'] }}</h4>
                                                             <ul>
                                                                 <li><i class="ion-ios-arrow-right"></i> Color :
-                                                                    <span>{{ $list_cart['color'] }}</span></li>
+                                                                    <span>{{ $list_cart['color'] }}</span>
+                                                                </li>
                                                                 <li><i class="ion-ios-arrow-right"></i> Size :
-                                                                    <span>{{ $list_cart['size'] }}</span></li>
+                                                                    <span>{{ $list_cart['size'] }}</span>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="cart_product_price">
-                                                            <span>{{ $list_cart['price'] }}</span>
+                                                            <span>{{ number_format($list_cart['price']) }}</span>
                                                         </div>
                                                     </td>
                                                     <td class="product_quantity">
                                                         <div class="cart_product_quantity">
-                                                            <input min="1" max="100" value="{{ $list_cart['quantity'] }}"
-                                                                type="number">
+                                                            <input min="1" max="100"
+                                                                value="{{ $list_cart['quantity'] }}" type="number">
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="cart_product_price">
-                                                            <span>{{ $list_cart['quantity'] * $list_cart['price'] }}</span>
+                                                            <span
+                                                                class="total_money">{{ number_format($list_cart['quantity'] * $list_cart['price']) }}</span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="cart_product_remove text-right">
-                                                            <a href="#"><i class="ion-android-close"></i></a>
+                                                            <a href="/delete_one_cart/{{ $list_cart['id'] }}"><i
+                                                                    class="ion-android-close"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -83,7 +87,6 @@
                             <div class="cart_page_button border-top d-flex justify-content-between">
                                 <div class="shopping_cart_btn">
                                     <a href="/delete_all_cart" class="btn btn-primary border">Xóa tất cả sản phẩm</a>
-                                    <button class="btn btn-primary border" type="submit">Cập nhật giỏ hàng</button>
                                 </div>
                                 <div class="shopping_continue_btn">
 
@@ -123,18 +126,17 @@
                             <div class="grand_totall_area">
                                 <div class="grand_totall_inner border-bottom">
                                     <div class="cart_subtotal d-flex justify-content-between">
-                                        <p>sub total </p>
-                                        <span>$126.00</span>
+                                        <p>Tổng phụ </p>
+                                        <span></span>
                                     </div>
                                     <div class="cart_grandtotal d-flex justify-content-between">
-                                        <p>grand total</p>
-                                        <span>$126.00</span>
+                                        <p>Tổng cộng</p>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="proceed_checkout_btn">
-                                    <a class="btn btn-primary" href="#">Mua hàng</a>
+                                    <a class="btn btn-primary" href="/check_out">Mua hàng</a>
                                 </div>
-                                <a href="#">Checkout with Mutilple Adresses</a>
                             </div>
                         </div>
                     </div>
@@ -144,4 +146,6 @@
         </div>
     </div>
     <!--shopping cart area end -->
+
+
 @endsection

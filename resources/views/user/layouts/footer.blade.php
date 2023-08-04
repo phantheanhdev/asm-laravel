@@ -187,10 +187,11 @@
     <script src="{{ asset('assets/js/jquery.instagramFeed.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('assets/js/mailchimp-ajax.js') }}"></script>
-
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
+    <script src="{{ asset('assets/js/user/cart.js') }}"></script>
+    <script src="{{ asset('assets/js/user/check_out.js') }}"></script>
 
     </body>
 

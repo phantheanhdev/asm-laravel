@@ -150,7 +150,7 @@
         </div>
     </div>
     <!--offcanvas menu area end-->
-    <!--mini cart-->
+    {{-- <!--mini cart-->
     <div class="mini_cart">
         <div class="cart_gallery">
             <div class="cart_close">
@@ -207,7 +207,7 @@
             </div>
         </div>
     </div>
-    <!--mini cart end-->
+    <!--mini cart end--> --}}
     <!--header area start-->
     <header class="header_section header_transparent">
         <div class="header_top">
@@ -332,7 +332,7 @@
                                     </li>
                                     <li><a href="#"><i class="icon-heart icons"></i></a> <span
                                             class="item_count">2</span></li>
-                                    <li class="shopping_cart"><a href="#"><i
+                                    <li class="shopping_cart"><a href="/cart"><i
                                                 class="icon-basket-loaded icons"></i></a>
                                         <span class="item_count">2</span>
                                     </li>

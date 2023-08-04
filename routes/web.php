@@ -30,13 +30,18 @@ Route::get('/single_product/{id}', [ProductController::class, 'single_product'])
 Route::get('/cart', [CartController::class, 'cart']);
 Route::post('/add_cart', [CartController::class, 'add_cart']);
 Route::get('/delete_all_cart', [CartController::class, 'delete_all_cart']);
+Route::get('/delete_one_cart/{id}', [CartController::class, 'delete_one_cart']);
+
+Route::get('/check_out', [CartController::class, 'check_out']);
+Route::post('/save_bill', [CartController::class, 'save_bill']);
+Route::get('/bill', [CartController::class, 'bill']);
 
 
 //  ================================= admin ==================================
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/category', CategoryController::class);
-    Route::resource('/user', UserController::class);    
+    Route::resource('/user', UserController::class);
 });
 
 

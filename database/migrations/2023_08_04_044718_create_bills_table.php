@@ -12,10 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bills', function (Blueprint $table) {
-            $table->id('id');
-            $table->float('total_price');
-            $table->unsignedInteger('product_id');
-            $table->unsignedInteger('user_id');
+            $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('full_name');
+            $table->text('address');
+            $table->string('email');
+            $table->string('phone');
+            $table->json('list_cart');
+            $table->decimal('total', 10, 0);
+            $table->integer('pttt');
             $table->timestamps();
         });
     }
