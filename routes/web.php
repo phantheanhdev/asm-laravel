@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -42,6 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/category', CategoryController::class);
     Route::resource('/user', UserController::class);
+    Route::resource('/bill', BillController::class);
 });
 
 
