@@ -18,10 +18,10 @@
     <!-- end page title -->
 
     <div class="row mb-2">
-        {{-- <div class="col-sm-5">
-            <a href="{{ route('bill.create') }}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add
-                bill</a>
-        </div> --}}
+        <div class="col-sm-5">
+            {{-- <a href="{{ route('bill.create') }}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add
+                bill</a> --}}
+        </div>
         <div class="col-sm-7">
             <div class="text-sm-end">
                 <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button>
@@ -92,7 +92,6 @@
                         @if ($bill->pttt == 0)
                             <td>Thanh toán khi nhận hàng</td>
                         @endif
-
 
                         {{-- <td class="table-action">
                             <form action="{{ route('bill.destroy', $bill->id) }}" method="post" class="d-flex">

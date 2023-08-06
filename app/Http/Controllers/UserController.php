@@ -43,13 +43,22 @@ class UserController extends Controller
         $phone = $request->input('phone');
         $role = $request->input('role');
 
-        // Mã hóa mật khẩu sử dụng bcrypt()
         $hashedPassword = bcrypt($password);
+
+        $validate = $request->validate([
+            'full_name' => 'required',
+            'acc_name' => 'required',
+            'password' => 'required',
+            'address' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'role' => 'required',
+        ]);
 
         $data = [
             'full_name' => $full_name,
             'acc_name' => $acc_name,
-            'password' => $hashedPassword, // Lưu mật khẩu đã mã hóa vào cơ sở dữ liệu
+            'password' => $hashedPassword,
             'view' => 0,
             'address' => $address,
             'email' => $email,
@@ -89,6 +98,15 @@ class UserController extends Controller
         $email = $request->input('email');
         $phone = $request->input('phone');
         $role = $request->input('role');
+
+        $validate = $request->validate([
+            'full_name' => 'required',
+            'acc_name' => 'required',
+            'address' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'role' => 'required',
+        ]);
 
         $user->fill([
             'full_name' => $full_name,

@@ -64,7 +64,7 @@
         const form = document.getElementById('form');
         const fullNameInput = document.getElementById('full_name');
         const accNameInput = document.getElementById('acc_name');
-        const passInput = document.getElementById('password');
+        const passInput = document.getElementById('pass');
         const addressInput = document.getElementById('address');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');

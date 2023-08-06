@@ -48,6 +48,14 @@ class ProductController extends Controller
         $img = $request->file('img')->getClientOriginalName();
         $request->file('img')->storeAs('public/images', $img);
 
+        $validate = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+            'category_id' => 'required',
+            'img' => 'image',
+        ]);
+
         $data = [
             'name' => $name,
             'price' => $price,
@@ -90,6 +98,14 @@ class ProductController extends Controller
 
         $img = $request->file('img')->getClientOriginalName();
         $request->file('img')->storeAs('public/images', $img);
+
+        $validate = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+            'category_id' => 'required',
+            'img' => 'image',
+        ]);
 
         $product->fill([
             'name' => $name,

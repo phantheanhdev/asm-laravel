@@ -47,8 +47,8 @@
         <div class="mb-3">
             <label class="form-label">Role</label>
             <select class="form-select" aria-label="Default select example" name="role">
-                    <option value="0" @if($user->role == 0)  {{'selected'}} @endif>Admin</option>
-                    <option value="1" @if($user->role == 1)  {{'selected'}} @endif>Khách hàng</option>
+                <option value="0" @if ($user->role == 0) {{ 'selected' }} @endif>Admin</option>
+                <option value="1" @if ($user->role == 1) {{ 'selected' }} @endif>Khách hàng</option>
             </select>
             <div id="" class="form-text" style="color: red"></div>
         </div>
@@ -59,7 +59,6 @@
         const form = document.getElementById('form');
         const fullNameInput = document.getElementById('full_name');
         const accNameInput = document.getElementById('acc_name');
-        const passInput = document.getElementById('password');
         const addressInput = document.getElementById('address');
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
@@ -89,15 +88,6 @@
             } else if (!accNameRegex.test(accNameInput.value)) {
                 document.getElementById('er_acc_name').textContent =
                     'Viết liền không dấu, 4-50 kí tự';
-            }
-
-            // Validate password
-            const passRegex = /^[a-zA-Z0-9]{5,100}$/;
-            if (!passInput.value) {
-                document.getElementById('er_pass').textContent = 'Không được để trống';
-            } else if (!passRegex.test(passInput.value)) {
-                document.getElementById('er_pass').textContent =
-                    'Viết liền không dấu, 5-100 kí tự';
             }
 
             // Validate Address
@@ -131,8 +121,6 @@
                 fullNameRegex.test(fullNameInput.value) &&
                 accNameInput.value &&
                 accNameRegex.test(accNameInput.value) &&
-                passInput.value &&
-                passRegex.test(passInput.value) &&
                 addressInput.value &&
                 addressRegex.test(addressInput.value) &&
                 emailInput.value &&

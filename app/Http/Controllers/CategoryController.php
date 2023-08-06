@@ -34,7 +34,12 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+
         $name = $request->input('name');
+
+        $validation = $request->validate([
+            'name' => 'required',
+        ]);
 
         $data = [
             'name' => $name,
@@ -65,6 +70,10 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $name = $request->input('name');
+
+        $validation = $request->validate([
+            'name' => 'required',
+        ]);
 
         $category->fill([
             'name' => $name,
